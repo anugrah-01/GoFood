@@ -41,7 +41,7 @@ let data = useCart();
               <div className='d-flex'>
                 <Link className="btn bg-white text-success mx-1" to="/login">Login</Link>
 
-                <Link className="btn bg-white text-success mx-1" to="/createuser">Signup</Link>
+                <Link className="btn bg-white text-success mx-1" to="/signup">Signup</Link>
               </div>
               :
               <div>

@@ -9,7 +9,7 @@ export default function Home() {
     const [search,setSearch] = useState('');
     const [foodCat,setFoodCat] = useState([]);
     const [foodItem,setFoodItem] = useState([]);
-
+    console.log("sdfsdf")
     const loadData = async ()=> {
         let response  = await fetch("http://localhost:5000/api/foodData", {
             method:"POST",
