@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
-const mongoURI= 'mongodb+srv://anugrahsri001:Cenasucks%40123@cluster0.cq8b7v0.mongodb.net/FoodAppMern?retryWrites=true&w=majority'
+const mongoURI = process.env.MONGO_URI;
 console.log("start")
 const mongoDB= async()=>{
-    await mongoose.connect(mongoURI,{useNewUrlParser: true},async (err,result)=>{
+    mongoose.set("strictQuery", false);
+    await mongoose.connect( mongoURI ,{useNewUrlParser: true},async (err,result)=>{
         if(err) console.log("---",err)
         else{
             console.log("connected");
@@ -10,7 +11,7 @@ const mongoDB= async()=>{
             fetched_data.find({}).toArray (async function(err,data){
                 const foodCategory = await mongoose.connection.db.collection("foodCategory");
                 foodCategory.find({}).toArray(function (err,catData) {
-                    console.log("hi")
+                   // console.log("hi")
                     if(err) console.log(err);
                     else {
                        global.food_items = data;
